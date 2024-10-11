@@ -96,11 +96,19 @@ console.log(football_teams);
 
 //Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 const football_teams2 = []
-for (let i=0; i<football_teams.length; i++){
+/* for (let i=0; i<football_teams.length; i++){
     football_teams2.push(football_teams[i]);
     delete football_teams2[i]["points_scored"];
-}
+} */
 console.log(football_teams2);
+
+for (let i=0; i<football_teams.length; i++){
+    const team_info = { 
+        team_name: football_teams[i].team_name, 
+        fouls_suffered: football_teams[i].fouls_suffered 
+    }; 
+    football_teams2.push(team_info);
+}
 
 
 
