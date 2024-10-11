@@ -3,8 +3,8 @@
 //Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.         //FATTO
 const bicycles = [
     {
-        bike_name: "scott",
-        bike_weight: 10
+        bike_name: "cott",
+        bike_weight: 5
     },
 
     {
@@ -14,12 +14,14 @@ const bicycles = [
 
     {
         bike_name: "ducati",
-        bike_weight: 30
+        bike_weight: 10
     },
 ]
 
 //2-Stampare a schermo la bici con peso minore.
-bike_light_weight = []
+
+/* SOLUZIONE SBAGLIATA */
+/* bike_light_weight = []
 name_bike_light_weight = []
 
 if (bicycles[0]["bike_weight"] < bicycles[1]["bike_weight"] && bicycles[0]["bike_weight"] < bicycles[2]["bike_weight"]){
@@ -37,9 +39,31 @@ console.log(bike_light_weight);
 console.log(name_bike_light_weight);
 
 const bike = document.getElementById("bike");
-bike.innerHTML = `La bici più leggera è del marchio ${name_bike_light_weight} e pesa ${bike_light_weight} kg`
+bike.innerHTML = `La bici più leggera è del marchio ${name_bike_light_weight} e pesa ${bike_light_weight} kg` */
 
 /* il metodo scelto è il peggiore perche se ci fossero 100 bici, è infattibile */
+
+/* SOLUZIONE CORRETTA */
+let bikes_weight = []
+for (let i=0; i<bicycles.length; i++){
+    bikes_weight.push(bicycles[i]["bike_weight"])
+}
+/* console.log(bikes_weight); */
+let bike_min_weigth = Math.min(...bikes_weight);
+/* console.log(bike_min_weigth); */
+
+let bike_min_weight = []
+for (let i=0; i<bicycles.length; i++){
+    if(bicycles[i]["bike_weight"] == bike_min_weigth) {
+        bike_min_weight.push(bicycles[i]["bike_name"])
+    }
+}
+/* console.log(bike_min_weight); */
+const bike = document.getElementById("bike");
+bike.innerHTML = `La bici più leggera è del marchio ${bike_min_weight} e pesa ${bike_min_weigth} kg`
+
+
+
 
 
 
