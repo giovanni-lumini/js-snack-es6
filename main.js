@@ -64,27 +64,46 @@ bike.innerHTML = `La bici più leggera è del marchio ${bike_min_weight} e pesa 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Snack2
-//Creare un array di oggetti di squadre di calcio.
+//1-Creare un array di oggetti di squadre di calcio.
 //Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
-//Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
-//Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
+//Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.         //FATTO
+const football_teams = [
+    {
+        team_name: "inter",
+        points_scored: 0,
+        fouls_suffered: 0
+    },
+
+    {
+        team_name: "milan",
+        points_scored: 0,
+        fouls_suffered: 0
+    },
+
+    {
+        team_name: "juve",
+        points_scored: 0,
+        fouls_suffered: 0
+    },
+]
+//2-Generare numeri random al posto degli 0 nelle proprietà “punti fatti" e “falli subiti”.         //FATTO
+for (let i=0; i<football_teams.length; i++){
+    football_teams[i]["points_scored"] = Math.floor(Math.random() * 10);
+    football_teams[i]["fouls_suffered"] = Math.floor(Math.random() * 10);
+}
+console.log(football_teams);
+
 //Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+const football_teams2 = []
+for (let i=0; i<football_teams.length; i++){
+    football_teams2.push(football_teams[i]);
+    delete football_teams2[i]["points_scored"];
+}
+console.log(football_teams2);
+
+
+
 
 //Snack 3 (Bonus)
 //Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
