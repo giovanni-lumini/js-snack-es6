@@ -3,7 +3,7 @@
 //Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.         //FATTO
 const bicycles = [
     {
-        bike_name: "cott",
+        bike_name: "scott",
         bike_weight: 5
     },
 
@@ -48,19 +48,21 @@ let bikes_weight = []
 for (let i=0; i<bicycles.length; i++){
     bikes_weight.push(bicycles[i]["bike_weight"])
 }
-/* console.log(bikes_weight); */
-let bike_min_weigth = Math.min(...bikes_weight);
-/* console.log(bike_min_weigth); */
+console.log(bikes_weight);
 
-let bike_min_weight = []
+let bike_min_weigth = Math.min(...bikes_weight);
+console.log(bike_min_weigth);
+
+let bike_min_weight_name = []
 for (let i=0; i<bicycles.length; i++){
     if(bicycles[i]["bike_weight"] == bike_min_weigth) {
-        bike_min_weight.push(bicycles[i]["bike_name"])
+        bike_min_weight_name.push(bicycles[i]["bike_name"])
+        break;
     }
 }
 /* console.log(bike_min_weight); */
 const bike = document.getElementById("bike");
-bike.innerHTML = `La bici più leggera è del marchio ${bike_min_weight} e pesa ${bike_min_weigth} kg`
+bike.innerHTML = `La bici più leggera è del marchio ${bike_min_weight_name} e pesa ${bike_min_weigth} kg`
 
 
 
@@ -104,8 +106,8 @@ console.log(football_teams2);
 
 for (let i=0; i<football_teams.length; i++){
     const team_info = { 
-        team_name: football_teams[i].team_name, 
-        fouls_suffered: football_teams[i].fouls_suffered 
+        team_name: football_teams[i]["team_name"], 
+        fouls_suffered: football_teams[i]["fouls_suffered"]
     }; 
     football_teams2.push(team_info);
 }
