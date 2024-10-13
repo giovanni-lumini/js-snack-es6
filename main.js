@@ -124,7 +124,6 @@ console.log(football_teams2);
 //Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).          //FATTO
 //La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.           //FATTO
 
-
 function my_function_num_between (my_numbers_array, a, b) {
     let between_numbers = [];    
     for (let i = 0; i < my_numbers_array.length; i++){
@@ -134,10 +133,8 @@ function my_function_num_between (my_numbers_array, a, b) {
     }
     console.log(between_numbers);
 };
-let my_numbers_array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let a = 2;
-let b = 8;
-my_function_num_between (my_numbers_array, a, b)
+
+my_function_num_between ([10,11,12,13,14,15,16,17], 11, 16)
 
 
 
