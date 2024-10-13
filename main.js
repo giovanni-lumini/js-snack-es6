@@ -89,6 +89,9 @@ const football_teams = [
         fouls_suffered: 0
     },
 ]
+/* console.log(football_teams); */
+
+
 //2-Generare numeri random al posto degli 0 nelle proprietà “punti fatti" e “falli subiti”.         //FATTO
 for (let i=0; i<football_teams.length; i++){
     football_teams[i]["points_scored"] = Math.floor(Math.random() * 10);
@@ -96,14 +99,15 @@ for (let i=0; i<football_teams.length; i++){
 }
 console.log(football_teams);
 
-//Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
-const football_teams2 = []
-/* for (let i=0; i<football_teams.length; i++){
+//Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.           //FATTO
+//SOLUZIONE CHE NON FUNZIONA
+/* const football_teams2 = []
+for (let i=0; i<football_teams.length; i++){
     football_teams2.push(football_teams[i]);
     delete football_teams2[i]["points_scored"];
-} */
-console.log(football_teams2);
-
+}
+console.log(football_teams2); */
+const football_teams2 = [];
 for (let i=0; i<football_teams.length; i++){
     const team_info = { 
         team_name: football_teams[i]["team_name"], 
@@ -111,10 +115,31 @@ for (let i=0; i<football_teams.length; i++){
     }; 
     football_teams2.push(team_info);
 }
+console.log(football_teams2);
 
 
 
 
 //Snack 3 (Bonus)
-//Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
-//La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+//Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).          //FATTO
+//La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.           //FATTO
+
+
+function my_function_num_between (my_numbers_array, a, b) {
+    let between_numbers = [];    
+    for (let i = 0; i < my_numbers_array.length; i++){
+        if (my_numbers_array[i] > a && my_numbers_array[i] < b) {
+            between_numbers.push(my_numbers_array[i]);
+        }
+    }
+    console.log(between_numbers);
+};
+let my_numbers_array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let a = 2;
+let b = 8;
+my_function_num_between (my_numbers_array, a, b)
+
+
+
+
+
